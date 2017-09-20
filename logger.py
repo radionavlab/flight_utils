@@ -18,7 +18,7 @@ PRESSED = 1
 RECORD = False
 RECORDING = False
 
-log_directory = "/home/tuckerhaydon/Desktop/logs/"
+log_directory = ""
 save_directory = ""
 
 commands = []
@@ -94,18 +94,17 @@ def main():
     # Node name and initialization
     rospy.init_node("logger", anonymous=True)
 
-    # Subscribers
-    rospy.Subscriber("/joy", Joy, joy_callback)
-
+    # Parameters
     log_directory = rospy.get_param("~log_directory")
     cmds = rospy.get_param("~commands")
+    joy_topic = rospy.get_param("~joy_topic")
+
+    # Subscribers
+    rospy.Subscriber(joy_topic, Joy, joy_callback)
 
     for cmd, fname in cmds.iteritems():
         commands.append(Command(cmd, fname))
-
-    # commands.append(Command("ping google.com", filename="ping_test.txt"))
-    # commands.append(Command("rosbag record -a -O data.bag", filename=None))
-    
+ 
     # Main ROS thread
     while not rospy.is_shutdown():
         if(RECORD == True and RECORDING == False):

@@ -4,6 +4,9 @@
         <!-- PARENT DIRECTORY OF LOGS -->
         <param name="log_directory" value="/home/tuckerhaydon/Desktop/logs/" />
 
+        <!-- JOYSTICK_TOPIC -->
+        <param name="joy_topic" value="/joy" />
+
         <!-- COMMAND, FILE TO SAVE STD OUTPUT -->
         <rosparam param="commands">
             "rosbag record -a -O data.bag": ""
