@@ -1,0 +1,16 @@
+<launch>
+    <node respawn="true" pkg="flight_utils" type="logger.py" name="logger" output="screen">
+
+        <!-- PARENT DIRECTORY OF LOGS -->
+        <param name="log_directory" value="/home/tuckerhaydon/Desktop/logs/" />
+
+        <!-- COMMAND, FILE TO SAVE STD OUTPUT -->
+        <rosparam param="commands">
+            "rosbag record -a -O data.bag": ""
+            "ping 192.168.1.1": "ping_router_log.txt"
+            "ping 192.168.1.101": "ping_odroid_log.txt"
+            "ping 192.168.1.102": "ping_snapdragon_log.txt"
+        </rosparam>
+
+    </node>
+</launch>
