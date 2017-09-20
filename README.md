@@ -5,4 +5,4 @@ This is a repository for various flight utilities.
 Used to log various data while the quadcopter is flying.
 
 Run it with: 
-roslaunch flight_utils logger.launch
+```roslaunch flight_utils logger.launch```
