@@ -1,0 +1,4 @@
+<launch>
+    <node respawn="true" pkg="flight_utils" type="visualize.sh" name="visualizer" output="screen" args="/px4_control/PVA_Ref /ref_location /Valkyrie/local_odom /true_location config.rviz" cwd="node">
+    </node>
+</launch>

@@ -11,3 +11,14 @@ Notes:
 
 Run it with: 
 ```roslaunch flight_utils logger.launch```
+
+
+## Visualizer
+Visualizes the flight path of the quadcopter in real time. 
+
+Notes:
+px4_control must be installed in the same catkin workspace, i.e. 
+/catkin_ws/ must have both flight_utils and px4_control. 
+
+To run the visualizer, simply type:
+```roslaunch flight_utils visualizerlaunch```
